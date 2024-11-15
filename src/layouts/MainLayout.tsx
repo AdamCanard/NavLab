@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function MainLayout({children}) {
+export default function MainLayout({children}: {children: JSX.Element}) {
   return (
     <View style={styles.container}>
       {children}

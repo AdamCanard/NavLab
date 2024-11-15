@@ -1,15 +1,21 @@
-import {View, StyleSheet, TouchableOpacity, Text} from 'react-native';
+import {View, TouchableOpacity, Text, StyleSheet} from 'react-native';
 import React from 'react';
 import MainLayout from '../layouts/MainLayout';
 
-export default function HomeScreen({navigation}) {
+export default function AboutScreen({navigation}: {navigation: any}) {
+  const date = new Date();
   return (
     <MainLayout>
       <View style={styles.view}>
+        <Text>Lab Assignment 5</Text>
+        <Text>By Adam Cunard</Text>
+        <Text>
+          {date.getFullYear() + '-' + date.getMonth() + '-' + date.getDay()}
+        </Text>
         <TouchableOpacity
-          onPress={() => navigation.navigate('About')}
+          onPress={() => navigation.goBack()}
           style={styles.button}>
-          <Text style={styles.text}>Go to About</Text>
+          <Text style={styles.text}>Go to Home</Text>
         </TouchableOpacity>
       </View>
     </MainLayout>
